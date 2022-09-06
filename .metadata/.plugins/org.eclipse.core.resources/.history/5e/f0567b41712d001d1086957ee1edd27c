@@ -1,0 +1,13 @@
+package index;
+
+public class Locacao {
+	protected Cliente cliente;
+	protected Filme filme;
+	protected double valorAluguel;
+	
+	public void alugar(Cliente c, Filme f, double valorAluguel) {
+		this.cliente = c;
+		this.filme = f;
+		this.valorAluguel=valorAluguel;
+	}
+}
