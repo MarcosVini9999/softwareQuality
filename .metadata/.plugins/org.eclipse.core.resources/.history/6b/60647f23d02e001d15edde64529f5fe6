@@ -1,0 +1,10 @@
+package index;
+
+public class Comprar implements Pagamento {
+	
+	@Override
+	public void pagar(double valorDaCompra) {
+		
+	}
+
+}

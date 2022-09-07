@@ -1,0 +1,23 @@
+package index;
+
+import java.util.ArrayList;
+
+public class Locacao implements Pagamento {
+	protected Cliente cliente;
+	protected Filme filme;
+	protected double valorAluguel;
+	protected  ArrayList<Locacao> alugueis;
+	
+	@Override
+	public void pagar(double valorDoPagamento) {
+		this.valorAluguel = valorDoPagamento;
+	}
+	
+	public void alugar(Cliente c, Filme f, double valorAluguel) {
+		if(valorAluguel == f.valorLocacao) {
+			this.cliente = c;
+			this.filme = f;
+			pagar(valorAluguel);
+		}
+	}
+}

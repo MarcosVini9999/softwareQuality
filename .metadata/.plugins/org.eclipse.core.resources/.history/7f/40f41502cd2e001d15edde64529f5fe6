@@ -1,0 +1,13 @@
+package index;
+
+import java.util.ArrayList;
+
+public class Comprar implements Pagamento {
+	protected  ArrayList<Locacao> compras;
+	
+	@Override
+	public void pagar(double valorDaCompra) {
+		
+	}
+
+}

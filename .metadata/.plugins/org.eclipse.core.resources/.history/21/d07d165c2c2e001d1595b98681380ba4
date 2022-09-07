@@ -1,0 +1,21 @@
+package index;
+
+public class Cliente {
+	protected String nome;
+	protected int id;
+	protected boolean statusAtivo;
+	
+	public Cliente(String nome, int id) {
+		this.nome= nome;
+		this.id= id;
+		statusAtivo=true;
+	}
+	
+	public boolean isAtivo(Cliente c) {
+		return c.statusAtivo;
+	}
+	
+	public boolean setIsAtivo(Cliente c, boolean status) {
+		c.statusAtivo=status;
+	}
+}

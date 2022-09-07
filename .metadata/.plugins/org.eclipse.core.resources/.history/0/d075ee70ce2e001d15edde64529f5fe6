@@ -1,0 +1,31 @@
+package index;
+
+import java.util.Calendar;
+
+public class Filme {
+	protected String nome;
+	protected int id;
+	protected double valorCompra;
+	protected double valorLocacao;
+	protected Genero genero;
+	
+	public Filme(String nome, Genero genero) {
+		this.nome = nome;
+		this.genero = genero;
+	}
+	
+	public void setValorCompra(double valorCompra) {
+		this.valorCompra=valorCompra;
+	}
+	
+	public double getValorCompra() {
+		return this.valorCompra;
+	}
+	
+	public void setValorLocacao(double valorLocacao) {
+		this.valorLocacao=valorLocacao;
+	}
+	public double getValorLocacao() {
+		return this.valorLocacao;
+	}
+}

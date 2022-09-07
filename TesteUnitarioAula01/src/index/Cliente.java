@@ -5,9 +5,17 @@ public class Cliente {
 	protected int id;
 	protected boolean statusAtivo;
 	
-	public Cliente(String nome, int id, boolean statusAtivo) {
+	public Cliente(String nome, int id) {
 		this.nome= nome;
 		this.id= id;
-		this.statusAtivo=statusAtivo; 
+		statusAtivo=true;
+	}
+	
+	public boolean isAtivo() {
+		return this.statusAtivo;
+	}
+	
+	public void setIsAtivo(boolean status) {
+		this.statusAtivo=status;
 	}
 }

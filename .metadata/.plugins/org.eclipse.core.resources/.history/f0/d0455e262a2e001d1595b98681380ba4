@@ -1,0 +1,13 @@
+package index;
+
+public class Cliente {
+	protected String nome;
+	protected int id;
+	protected boolean statusAtivo;
+	
+	public Cliente(String nome, int id) {
+		this.nome= nome;
+		this.id= id;
+		
+	}
+}

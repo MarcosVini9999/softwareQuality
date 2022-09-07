@@ -1,17 +1,29 @@
 package index;
 
-import java.util.Calendar;
-
 public class Filme {
 	protected String nome;
 	protected int id;
-	protected double valorCompra;
-	protected Genero genero;
-	protected Calendar data;
+	private double valorCompra;
+	private double valorLocacao;
+	protected GeneroENUM generoENUM;
 	
-	public Filme(String nome, Genero genero) {
+	public Filme(String nome, GeneroENUM generoENUM) {
 		this.nome = nome;
-		this.genero = genero;
-		this.data = Calendar.getInstance();
+		this.generoENUM = generoENUM;
+	}
+	
+	public void setValorCompra(double valorCompra) {
+		this.valorCompra=valorCompra;
+	}
+	
+	public double getValorCompra() {
+		return this.valorCompra;
+	}
+	
+	public void setValorLocacao(double valorLocacao) {
+		this.valorLocacao=valorLocacao;
+	}
+	public double getValorLocacao() {
+		return this.valorLocacao;
 	}
 }
