@@ -9,7 +9,8 @@ public class Locacao implements Pagamento {
 	protected double valorPagoNoAluguel;
 	protected Calendar data;
 	protected  ArrayList<Locacao> alugueis;
-	protected GeneroENUM topsGeneros;
+	protected GeneroENUM topsGenero;
+	private static Locacao instance = null;
 	
 	@Override
 	public void pagar(double valorDoPagamento) {
@@ -36,18 +37,33 @@ public class Locacao implements Pagamento {
 		}
 	}
 	
-	private void setTopMaisAlugados() {
+	private void setTopMaisAlugado() {
+		int contador=0;
+		int aux = 0;
 		for (GeneroENUM generos: GeneroENUM.values()) {
 			for (Locacao locacao : alugueis) {
 				if(locacao.filme.generoENUM==generos) {
-					
+					contador = contador +1;
 				}
 			}
+			if(contador>aux) {
+				aux = contador;
+				this.topsGenero = generos;
+			}
+			contador = 0;
 		}
+		return;
 	}
 	
-	public GeneroENUM getTopMaisAlugados() {
-		setTopMaisAlugados();
-		return this.topsGeneros;
+	public GeneroENUM getTopMaisAlugado() {
+		setTopMaisAlugado();
+		return this.topsGenero;
+	}
+	
+	public static Locacao getInstance() {
+		if (instance == null) {
+			instance = new Locacao();
+		}
+		return instance;
 	}
 }

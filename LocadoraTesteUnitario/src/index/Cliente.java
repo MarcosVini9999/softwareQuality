@@ -4,6 +4,7 @@ public class Cliente {
 	protected String nome;
 	protected int id;
 	protected boolean statusAtivo;
+	protected ListaFavorito listaFavorito;
 	
 	public Cliente(String nome, int id) {
 		this.nome= nome;
