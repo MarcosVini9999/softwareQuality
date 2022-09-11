@@ -8,21 +8,21 @@ public class Comprar implements Pagamento {
 	protected Filme filme;
 	protected double valorCompra;
 	protected Calendar data;
-	protected  ArrayList<Locacao> compras;
-	
+	protected ArrayList<Locacao> compras;
+
 	@Override
 	public void pagar(double valorDaCompra) {
-		this.valorCompra=valorDaCompra;
+		this.valorCompra = valorDaCompra;
 	}
-	
-	public void comprar (Filme f, Cliente c, double valorDaCompra) {
-		if((valorDaCompra == f.getValorCompra()) || (c.statusAtivo==true)) {
+
+	public void comprar(Filme f, Cliente c, double valorDaCompra) {
+		if ((valorDaCompra == f.getValorCompra()) || (c.statusAtivo == true)) {
 			this.cliente = c;
 			this.filme = f;
 			pagar(valorDaCompra);
 			compras = new ArrayList<Locacao>();
 			this.data = Calendar.getInstance();
-		}else {
+		} else {
 			System.out.println("Não foi possivel comprar o filme, valor insuficiente ou cliente inativo");
 		}
 	}
