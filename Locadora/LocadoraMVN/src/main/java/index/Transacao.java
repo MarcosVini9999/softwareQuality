@@ -30,7 +30,7 @@ public class Transacao {
 	public void setDescontoPorGenero(GeneroENUM genero, double valorDoDesconto) {
 		for (Locacao locacao : locacoes) {
 			if (locacao.filme.generoENUM == genero) {
-				
+				locacao.valorPagoNoAluguel=((locacao.valorPagoNoAluguel)-valorDoDesconto);
 			}
 		}
 	}

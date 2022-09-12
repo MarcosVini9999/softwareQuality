@@ -11,14 +11,13 @@ public class ClienteTest {
 		Cliente c = new Cliente("Marcos", 10);
 		assertEquals("Marcos", c.nome);
 		assertEquals(10, c.id);
-		assertEquals(true, c.statusAtivo);
+		assertEquals(true, c.isAtivo());
 	}
 	
 	@Test
 	public void clienteStatusTest() {
 		Cliente c = new Cliente("Marcos", 10);
 		c.setIsAtivo(false);
-		assertEquals(false, c.statusAtivo);
+		assertEquals(false, c.isAtivo());
 	}
-
 }

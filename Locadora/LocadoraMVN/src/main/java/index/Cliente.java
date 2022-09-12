@@ -3,7 +3,7 @@ package index;
 public class Cliente {
 	protected String nome;
 	protected int id;
-	protected boolean statusAtivo;
+	private boolean statusAtivo;
 	protected ListaFavorito listaFavorito;
 	
 	

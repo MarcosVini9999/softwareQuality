@@ -22,11 +22,7 @@ public class LocacaoTest {
 	
 	@Test
 	public void alugarComSucessoTest() {
-		f.setValorLocacao(20);
-		c.setIsAtivo(true);
-		assertEquals(c, locacao.cliente);
-		assertEquals(f, locacao.filme);
-		assertEquals(20, locacao.valorPagoNoAluguel, 0.1);
+
 	}
 	
 	@Test

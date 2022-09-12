@@ -13,13 +13,13 @@ public class Locacao implements Pagamento {
 	}
 
 	public void alugar(Cliente c, Filme f, double valorDoPagamento) {
-		if ((valorDoPagamento == f.getValorLocacao()) || (c.statusAtivo == true)) {
+		if ((valorDoPagamento == f.getValorLocacao()) && (c.isAtivo() == true)) {
 			this.cliente = c;
 			this.filme = f;
 			pagar(valorDoPagamento);
 			this.data = Calendar.getInstance();
 		} else {
-			System.out.println("Não foi possivel alugar o filme, valor insuficiente ou cliente inativo");
+			return;
 		}
 	}
 

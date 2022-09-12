@@ -16,10 +16,12 @@ public class TransacaoTest {
 	@Before
 	public void setUp() throws Exception {
 		f = new Filme("Vingadores", GeneroENUM.Ação);
+		f.setValorLocacao(20);
 		c= new Cliente("Marcos", 10);
 		locacao = new Locacao();
 		locacao.alugar(c, f, 20);
 		t=Transacao.getInstance();
+		t.locacoes.add(locacao);
 	}
 	
 	@After
@@ -30,14 +32,24 @@ public class TransacaoTest {
 	@Test
 	public void getTopGeneroMaisAlugadoTest() {
 		Filme f2 = new Filme("Vingadores2", GeneroENUM.Aventura);
+		Filme f3 = new Filme("Vingadores3", GeneroENUM.Ação);
 		Locacao locacao2 = new Locacao();
 		locacao2.alugar(c, f2, 0);
 		Locacao locacao3 = new Locacao();
-		locacao3.alugar(c, f, 0);
-		t.locacoes.add(locacao);
+		locacao3.alugar(c, f3, 0);
 		t.locacoes.add(locacao2);
 		t.locacoes.add(locacao3);
 		assertEquals(GeneroENUM.Ação, t.getTopGeneroMaisAlugado());
 	}
+	@Test
+	public void setDescontoPorGeneroTest() {
+		t.setDescontoPorGenero(GeneroENUM.Ação, 10);
+		assertEquals(10, locacao.valorPagoNoAluguel, 0.1);
+	}
+	@Test
+	public void valorLocacaoTotalTest() {
+		assertEquals(20, t.getValorLocacaoTotal(), 0.1);
+	}
+
 
 }
