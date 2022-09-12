@@ -12,7 +12,7 @@ public class Locacao implements Pagamento {
 	protected GeneroENUM topsGenero;
 	private static Locacao instance = null;
 
-	@Override
+	
 	public void pagar(double valorDoPagamento) {
 		this.valorPagoNoAluguel = valorDoPagamento;
 	}

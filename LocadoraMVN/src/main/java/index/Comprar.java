@@ -9,13 +9,12 @@ public class Comprar implements Pagamento {
 	protected double valorCompra;
 	protected Calendar data;
 	protected ArrayList<Locacao> compras;
-
-	@Override
+	
 	public void pagar(double valorDaCompra) {
 		this.valorCompra = valorDaCompra;
 	}
 
-	public void comprar(Filme f, Cliente c, double valorDaCompra) {
+	public Comprar(Filme f, Cliente c, double valorDaCompra) {
 		if ((valorDaCompra == f.getValorCompra()) || (c.statusAtivo == true)) {
 			this.cliente = c;
 			this.filme = f;
