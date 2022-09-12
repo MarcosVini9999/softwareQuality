@@ -5,7 +5,8 @@ public class Cliente {
 	protected int id;
 	protected boolean statusAtivo;
 	protected ListaFavorito listaFavorito;
-
+	
+	
 	public Cliente(String nome, int id) {
 		this.nome = nome;
 		this.id = id;
