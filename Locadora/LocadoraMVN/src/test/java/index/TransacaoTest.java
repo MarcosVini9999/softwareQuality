@@ -16,7 +16,6 @@ public class TransacaoTest {
 	@Before
 	public void setUp() throws Exception {
 		f = new Filme("Vingadores", GeneroENUM.Ação);
-		f.setValorLocacao(20);
 		c= new Cliente("Marcos", 10);
 		locacao = new Locacao();
 		locacao.alugar(c, f, 20);

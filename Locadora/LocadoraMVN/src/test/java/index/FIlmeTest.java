@@ -18,16 +18,4 @@ public class FIlmeTest {
 		assertEquals("Vingadores", f.nome);
 		assertEquals(GeneroENUM.Ação,f.generoENUM);
 	}
-	
-	@Test
-	public void setValorCompraTest() {
-		f.setValorCompra(50);
-		assertEquals(50,f.getValorCompra(), 0.1);
-	}
-	
-	@Test
-	public void setValorLocacaoTest() {
-		f.setValorLocacao(20);
-		assertEquals(20, f.getValorLocacao(), 0.1);
-	}
 }

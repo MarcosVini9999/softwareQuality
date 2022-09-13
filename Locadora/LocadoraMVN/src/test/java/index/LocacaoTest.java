@@ -16,18 +16,16 @@ public class LocacaoTest {
 		f = new Filme("Vingadores", GeneroENUM.Ação);
 		c= new Cliente("Marcos", 10);
 		locacao = new Locacao();
-		locacao.alugar(c, f, 20);
 	}
 	
 	
 	@Test
 	public void alugarComSucessoTest() {
-
-	}
-	
-	@Test
-	public void setDescontoPorGeneroTest() {
-
+		locacao.alugar(c, f, 20);
+		c.setIsAtivo(true);
+		assertEquals(c, locacao.cliente);
+		assertEquals(f, locacao.filme);
+		assertEquals(20, locacao.valorPagoNoAluguel, 0.1);
 	}
 	
 }

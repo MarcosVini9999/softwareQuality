@@ -13,7 +13,7 @@ public class Locacao implements Pagamento {
 	}
 
 	public void alugar(Cliente c, Filme f, double valorDoPagamento) {
-		if ((valorDoPagamento == f.getValorLocacao()) && (c.isAtivo() == true)) {
+		if (c.isAtivo() == true) {
 			this.cliente = c;
 			this.filme = f;
 			pagar(valorDoPagamento);
